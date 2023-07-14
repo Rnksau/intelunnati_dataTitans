@@ -1,0 +1,28 @@
+
+State Machine - |ATM|previous_state
+Name previous_state.sX previous_state.s8 previous_state.s7 previous_state.s6 previous_state.s5 previous_state.s4 previous_state.s3 previous_state.s2 previous_state.s1 previous_state.s0 previous_state.sS 
+previous_state.sS 0 0 0 0 0 0 0 0 0 0 0 
+previous_state.s0 0 0 0 0 0 0 0 0 0 1 1 
+previous_state.s1 0 0 0 0 0 0 0 0 1 0 1 
+previous_state.s2 0 0 0 0 0 0 0 1 0 0 1 
+previous_state.s3 0 0 0 0 0 0 1 0 0 0 1 
+previous_state.s4 0 0 0 0 0 1 0 0 0 0 1 
+previous_state.s5 0 0 0 0 1 0 0 0 0 0 1 
+previous_state.s6 0 0 0 1 0 0 0 0 0 0 1 
+previous_state.s7 0 0 1 0 0 0 0 0 0 0 1 
+previous_state.s8 0 1 0 0 0 0 0 0 0 0 1 
+previous_state.sX 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |ATM|state
+Name state.sX state.s8 state.s7 state.s6 state.s5 state.s4 state.s3 state.s2 state.s1 state.sS state.s0 
+state.s0 0 0 0 0 0 0 0 0 0 0 0 
+state.sS 0 0 0 0 0 0 0 0 0 1 1 
+state.s1 0 0 0 0 0 0 0 0 1 0 1 
+state.s2 0 0 0 0 0 0 0 1 0 0 1 
+state.s3 0 0 0 0 0 0 1 0 0 0 1 
+state.s4 0 0 0 0 0 1 0 0 0 0 1 
+state.s5 0 0 0 0 1 0 0 0 0 0 1 
+state.s6 0 0 0 1 0 0 0 0 0 0 1 
+state.s7 0 0 1 0 0 0 0 0 0 0 1 
+state.s8 0 1 0 0 0 0 0 0 0 0 1 
+state.sX 1 0 0 0 0 0 0 0 0 0 1 
