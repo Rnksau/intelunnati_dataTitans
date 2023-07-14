@@ -1,0 +1,372 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ATM_TB is
+end ATM_TB;
+
+architecture behavior of ATM_TB is
+    component ATM is
+        port (
+            userinput : in std_logic_vector(2 downto 0);
+            pb0 : in std_logic;
+            pb1 : in std_logic;
+            clk : in std_logic;
+            seven_seg_6 : out std_logic_vector(7 downto 0);
+            seven_seg_5 : out std_logic_vector(7 downto 0);
+            seven_seg_4 : out std_logic_vector(7 downto 0);
+            seven_seg_3 : out std_logic_vector(7 downto 0);
+            seven_seg_2 : out std_logic_vector(7 downto 0);
+            seven_seg_1 : out std_logic_vector(7 downto 0)
+        );
+    end component;
+    
+    signal userinput : std_logic_vector(2 downto 0);
+    signal pb0 : std_logic;
+    signal pb1 : std_logic;
+    signal clk : std_logic := '0';
+    signal seven_seg_6 : std_logic_vector(7 downto 0);
+    signal seven_seg_5 : std_logic_vector(7 downto 0);
+    signal seven_seg_4 : std_logic_vector(7 downto 0);
+    signal seven_seg_3 : std_logic_vector(7 downto 0);
+    signal seven_seg_2 : std_logic_vector(7 downto 0);
+    signal seven_seg_1 : std_logic_vector(7 downto 0);
+    
+    constant CLK_PERIOD : time := 20 ns;
+    
+    file report_file : text open write_mode is "simulation_report.txt";
+    variable line_out : line;
+    
+begin
+    uut: ATM
+    port map (
+        userinput => userinput,
+        pb0 => pb0,
+        pb1 => pb1,
+        clk => clk,
+        seven_seg_6 => seven_seg_6,
+        seven_seg_5 => seven_seg_5,
+        seven_seg_4 => seven_seg_4,
+        seven_seg_3 => seven_seg_3,
+        seven_seg_2 => seven_seg_2,
+        seven_seg_1 => seven_seg_1
+    );
+        
+    clk_process: process
+    begin
+        while now < 1000 ns loop
+            clk <= '0';
+            wait for CLK_PERIOD / 2;
+            clk <= '1';
+            wait for CLK_PERIOD / 2;
+        end loop;
+        wait;
+    end process;
+        
+    stimulus: process
+    begin
+        userinput <= "000";
+        pb0 <= '0';
+        pb1 <= '0';
+            
+        wait for 10 ns;
+            
+        -- Test case 1
+        userinput <= "001";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 2
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 3
+        userinput <= "010";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 4
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 5
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 6
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 7
+        userinput <= "100";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 8
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 9
+        userinput <= "101";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 10
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 11
+        userinput <= "110";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 12
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 13
+        userinput <= "111";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 14
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 15
+        userinput <= "000";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 16
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 17
+        pb1 <= '1';
+        wait for 20 ns;
+            
+        -- Test case 18
+        pb1 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 19
+        pb1 <= '1';
+        wait for 20 ns;
+            
+        -- Test case 20
+        pb1 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 21
+        pb1 <= '1';
+        wait for 20 ns;
+            
+        -- Test case 22
+        pb1 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 23
+        pb1 <= '1';
+        wait for 20 ns;
+            
+        -- Test case 24
+        pb1 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 25
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 26
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 27
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 28
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 29
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 30
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 31
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 32
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 33
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 34
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 35
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 36
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 37
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 38
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 39
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 40
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 41
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 42
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 43
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 44
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 45
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 46
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 47
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 48
+        pb0 <= '0';
+        wait for 20 ns;
+            
+        -- Test case 49
+        userinput <= "011";
+        pb0 <= '1';
+        wait for 40 ns;
+            
+        -- Test case 50
+        pb0 <= '0';
+        wait for 20 ns;
+        
+        -- Add more test cases as needed
+            
+        wait;
+    end process;
+        
+    monitor: process
+    begin
+        while now < 1000 ns loop
+            write(line_out, "Time = ");
+            write(line_out, now / 1 ns, 1);
+            write(line_out, " ns, Userinput = ");
+            write(line_out, userinput(2));
+            write(line_out, userinput(1));
+            write(line_out, userinput(0));
+            write(line_out, ", PB0 = ");
+            write(line_out, pb0);
+            write(line_out, ", PB1 = ");
+            write(line_out, pb1);
+            write(line_out, ", Seven_Seg_6 = ");
+            write(line_out, seven_seg_6(7));
+            write(line_out, seven_seg_6(6));
+            write(line_out, seven_seg_6(5));
+            write(line_out, seven_seg_6(4));
+            write(line_out, seven_seg_6(3));
+            write(line_out, seven_seg_6(2));
+            write(line_out, seven_seg_6(1));
+            write(line_out, seven_seg_6(0));
+            write(line_out, ", Seven_Seg_5 = ");
+            write(line_out, seven_seg_5(7));
+            write(line_out, seven_seg_5(6));
+            write(line_out, seven_seg_5(5));
+            write(line_out, seven_seg_5(4));
+            write(line_out, seven_seg_5(3));
+            write(line_out, seven_seg_5(2));
+            write(line_out, seven_seg_5(1));
+            write(line_out, seven_seg_5(0));
+            write(line_out, ", Seven_Seg_4 = ");
+            write(line_out, seven_seg_4(7));
+            write(line_out, seven_seg_4(6));
+            write(line_out, seven_seg_4(5));
+            write(line_out, seven_seg_4(4));
+            write(line_out, seven_seg_4(3));
+            write(line_out, seven_seg_4(2));
+            write(line_out, seven_seg_4(1));
+            write(line_out, seven_seg_4(0));
+            write(line_out, ", Seven_Seg_3 = ");
+            write(line_out, seven_seg_3(7));
+            write(line_out, seven_seg_3(6));
+            write(line_out, seven_seg_3(5));
+            write(line_out, seven_seg_3(4));
+            write(line_out, seven_seg_3(3));
+            write(line_out, seven_seg_3(2));
+            write(line_out, seven_seg_3(1));
+            write(line_out, seven_seg_3(0));
+            write(line_out, ", Seven_Seg_2 = ");
+            write(line_out, seven_seg_2(7));
+            write(line_out, seven_seg_2(6));
+            write(line_out, seven_seg_2(5));
+            write(line_out, seven_seg_2(4));
+            write(line_out, seven_seg_2(3));
+            write(line_out, seven_seg_2(2));
+            write(line_out, seven_seg_2(1));
+            write(line_out, seven_seg_2(0));
+            write(line_out, ", Seven_Seg_1 = ");
+            write(line_out, seven_seg_1(7));
+            write(line_out, seven_seg_1(6));
+            write(line_out, seven_seg_1(5));
+            write(line_out, seven_seg_1(4));
+            write(line_out, seven_seg_1(3));
+            write(line_out, seven_seg_1(2));
+            write(line_out, seven_seg_1(1));
+            write(line_out, seven_seg_1(0));
+            writeline(report_file, line_out);
+            wait for 10 ns;
+        end loop;
+        wait;
+    end process;
+end architecture behavior;
