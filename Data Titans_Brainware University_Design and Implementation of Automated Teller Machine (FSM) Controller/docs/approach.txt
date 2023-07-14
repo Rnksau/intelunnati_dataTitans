@@ -1,0 +1,44 @@
+Design and Implementation of ATM (FSM) Controller - Approach Report
+
+------------------------------------------------------------
+Steps Taken to Reach the Final Outcome:
+------------------------------------------------------------
+
+The design and implementation of the ATM (FSM) controller involved the following steps:
+
+1. Requirement Analysis: The initial step was to analyze the requirements of the ATM controller, including the desired functionality, user interface, state transitions, and memory handling.
+
+2. State Definition: Based on the requirements, a set of states was defined for the ATM controller. Each state represented a specific stage or action in the ATM operation, such as the welcome message, account number input, passcode verification, transaction selection, and balance update.
+
+3. State Transition Design: The state transitions were determined by considering the user inputs, time limits, and passcode validation. The transitions were designed to move the system from one state to another based on specific conditions and user actions.
+
+4. User Interface Implementation: The user interface components, such as buttons, seven-segment displays, and input/output signals, were implemented using VHDL. The seven-segment displays were used to show messages, account numbers, passcodes, transaction details, and error messages to the user.
+
+5. Memory Handling: A memory module was designed to store account information, including account numbers, passcodes, and balances. The memory module allowed the ATM controller to access and update account data based on user actions.
+
+6. Testing and Verification: Extensive testing and verification were performed to ensure the correct functionality of the ATM controller. Various test scenarios were created to cover all possible user interactions, state transitions, and error conditions.
+
+------------------------------------------------------------
+Report Outcomes and Reasoning for Each Approach:
+------------------------------------------------------------
+
+1. State Definition:
+   - Outcome: The states were defined accurately based on the requirements, ensuring that all stages of the ATM operation were covered.
+   - Reasoning: Clear and well-defined states were crucial for proper state transitions and determining the system behavior at each stage.
+
+2. State Transition Design:
+   - Outcome: The state transitions were implemented correctly, allowing the system to respond appropriately to user inputs, time limits, and passcode validation.
+   - Reasoning: Careful consideration was given to the logic and conditions required for smooth transitions between states, ensuring a seamless user experience.
+
+3. User Interface Implementation:
+   - Outcome: The user interface components, including buttons and seven-segment displays, were implemented accurately, enabling user input and display of relevant information.
+   - Reasoning: The user interface was designed to provide a user-friendly experience, allowing users to interact with the ATM controller easily and understand the displayed information.
+
+4. Memory Handling:
+   - Outcome: The memory module successfully stored and accessed account information, facilitating passcode validation and account balance updates.
+   - Reasoning: Proper memory handling was essential for storing and retrieving account data efficiently, ensuring the security and accuracy of the ATM operations.
+
+5. Testing and Verification:
+   - Outcome: Extensive testing and verification were conducted, and all tests were passed successfully, validating the correct functionality of the ATM controller.
+   - Reasoning: Thorough testing was essential to identify and fix any issues or bugs in the design and implementation, ensuring that the ATM controller met the required specifications.
+

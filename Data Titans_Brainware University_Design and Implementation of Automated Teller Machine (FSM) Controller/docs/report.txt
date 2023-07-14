@@ -1,0 +1,53 @@
+Design and Implementation of ATM (FSM) Controller - Simulation Report
+
+------------------------------------------------------------
+Conclusion of Tasks Performed:
+------------------------------------------------------------
+
+During the design and implementation of the ATM (FSM) controller, the following tasks were performed:
+
+1. State Definition: The states of the ATM controller were defined based on the required functionality, including state transitions and outputs.
+
+2. User Interface: The user interface was implemented to allow user input and display relevant information on the seven-segment display.
+
+3. Memory Handling: A memory module was created to store account information, including account numbers, passcodes, and balances.
+
+4. State Transitions: The ATM controller was designed to transition between states based on user input, time limits, and passcode validation.
+
+5. Testing and Verification: Extensive testing and verification were conducted to ensure the correct functionality of the ATM controller.
+
+------------------------------------------------------------
+Tests Carried Out:
+------------------------------------------------------------
+
+The following tests were carried out to validate the design and implementation of the ATM (FSM) controller:
+
+1. Test 1: State Transitions
+   - Inputs: Simulated user inputs, button presses, and time intervals
+   - Expected Outputs: Proper state transitions, correct display values, and appropriate responses to user actions
+   - Result: Passed
+
+2. Test 2: Passcode Validation
+   - Inputs: Simulated user inputs of passcodes
+   - Expected Outputs: Successful validation for correct passcodes and appropriate response for incorrect passcodes
+   - Result: Passed
+
+3. Test 3: Account Balance Update
+   - Inputs: Simulated user inputs for withdrawal and deposit amounts
+   - Expected Outputs: Proper updating of account balances and correct display of updated balances
+   - Result: Passed
+
+4. Test 4: Time Limits and Error Handling
+   - Inputs: Simulated time intervals and user actions
+   - Expected Outputs: Proper handling of time limits, display of error messages, and state transitions
+   - Result: Passed
+
+------------------------------------------------------------
+Final Accuracy:
+------------------------------------------------------------
+
+The design and implementation of the ATM (FSM) controller have been thoroughly tested, and all the tests were passed successfully. 
+The controller demonstrated accurate state transitions, proper passcode validation, correct account balance updates, and appropriate 
+error handling. Therefore, the final accuracy of the ATM (FSM) controller is 100%, indicating that it meets the required functionality 
+and performs as expected.
+
